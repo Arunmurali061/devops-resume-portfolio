@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-resume
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Arunmurali061/devops-resume-portfolio.git
+    targetRevision: main
+    path: helm/devops-resume
+    helm:
+      releaseName: devops-resume-helm
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-resume
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-resume
+  template:
+    metadata:
+      labels:
+        app: devops-resume
+    spec:
+      containers:
+        - name: devops-resume
+          image: devops-resume:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

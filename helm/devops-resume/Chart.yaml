@@ -1,0 +1,7 @@
+Replace its contents with:
+apiVersion: v2
+name: devops-resume
+description: Helm chart for DevOps Resume Portfolio
+type: application
+version: 0.1.0
+appVersion: "v4"

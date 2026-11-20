@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  repository: quay.io/arunmdevops/devops-resume
+  tag: "v4"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+containerPort: 8080
